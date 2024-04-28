@@ -3,7 +3,12 @@ use bevy::asset::AssetServer;
 use bevy::hierarchy::ChildBuilder;
 use bevy::core::Name;
 
-pub fn create_text(asset_server: &Res<AssetServer>, text: &str, parent: &mut ChildBuilder, font_size: f32) {
+pub fn create_text(
+    asset_server: &Res<AssetServer>,
+    text: &str,
+    parent: &mut ChildBuilder,
+    font_size: f32,
+) {
     parent.spawn((
         Name::new(format!("text: {text}")),
         TextBundle {
