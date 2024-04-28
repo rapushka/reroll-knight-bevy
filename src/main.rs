@@ -20,12 +20,6 @@ fn main() {
         .add_plugins(WorldInspectorPlugin::new())
         .add_plugins(GamePlugin)
 
-        // .init_resource::<Configuration>() // `ResourceInspectorPlugin` won't initialize the resource
-        // .register_type::<Configuration>() // you need to register your type to display it
-        // .add_plugins(ResourceInspectorPlugin::<Configuration>::default())
-        // also works with built-in resources, as long as they are `Reflect`
-        .add_plugins(ResourceInspectorPlugin::<Time>::default())
-
         .run();
 }
 
