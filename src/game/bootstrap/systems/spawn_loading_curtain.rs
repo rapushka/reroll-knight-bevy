@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use crate::constants;
 use crate::ui::components::*;
-use crate::ui::factory;
+use crate::ui::create;
 
 pub fn spawn_loading_curtain(
     asset_server: Res<AssetServer>,
@@ -18,13 +18,13 @@ pub fn build_loading_curtain(
         Name::new("loading curtain"),
         LoadingCurtain {},
         NodeBundle {
-            style: constants::styles::MAIN_MENU,
+            style: constants::styles::LOADING_CURTAIN,
             background_color: Color::BLACK.into(),
             ..default()
         },
     ))
         .with_children(|parent| {
-            factory::create_text(asset_server, "Loading...", parent, constants::FONT_SIZE);
+            create::text(asset_server, "Loading...", parent, constants::FONT_SIZE);
         })
         .id()
 }
