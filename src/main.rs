@@ -4,6 +4,7 @@ use crate::game::*;
 
 mod game;
 mod constants;
+mod ui;
 
 #[derive(States, Clone, Eq, PartialEq, Debug, Hash, Default)]
 enum AppState {
