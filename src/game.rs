@@ -2,8 +2,8 @@ use bevy::prelude::*;
 use self::bootstrap::*;
 use self::main_menu::*;
 
-mod bootstrap;
-mod main_menu;
+pub(crate) mod bootstrap;
+pub(crate) mod main_menu;
 
 pub struct GamePlugin;
 

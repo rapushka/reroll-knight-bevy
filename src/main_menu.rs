@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 
-use crate::AppState;
+use crate::infrastructure::AppState;
 use crate::ui::components::{LoadingCurtain, MainMenu};
 use crate::ui::systems::show_hide::*;
 

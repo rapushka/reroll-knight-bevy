@@ -1,26 +1,27 @@
 use bevy::prelude::*;
-use bevy_inspector_egui::quick::{ResourceInspectorPlugin, WorldInspectorPlugin};
-use crate::game::*;
+use dependencies::*;
+use infrastructure::*;
+use crate::bootstrap::BootstrapPlugin;
+use crate::main_menu::MainMenuPlugin;
+use crate::ui::systems::*;
 
-mod game;
 mod constants;
 mod ui;
 mod infrastructure;
-
-#[derive(States, Clone, Eq, PartialEq, Debug, Hash, Default)]
-enum AppState {
-    #[default]
-    Bootstrap,
-    MainMenu,
-}
+mod dependencies;
+mod bootstrap;
+mod main_menu;
 
 fn main() {
     App::new()
         .init_state::<AppState>()
 
-        .add_plugins(DefaultPlugins)
-        .add_plugins(WorldInspectorPlugin::new())
-        .add_plugins(GamePlugin)
+        .add_plugins(DependenciesPlugin)
+
+        .add_plugins(BootstrapPlugin)
+        .add_plugins(MainMenuPlugin)
+
+        .add_systems(Update, visualise_interaction_with_buttons)
 
         .run();
 }

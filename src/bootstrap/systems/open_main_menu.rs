@@ -1,5 +1,5 @@
 use bevy::prelude::{NextState, Query, ResMut};
-use crate::AppState;
+use crate::infrastructure::AppState;
 use crate::infrastructure::*;
 
 pub fn open_main_menu(
