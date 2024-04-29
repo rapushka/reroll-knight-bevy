@@ -1,8 +1,6 @@
-use bevy::prelude::{Commands, default, NodeBundle, Res};
-use bevy::asset::AssetServer;
-use bevy::hierarchy::BuildChildren;
+use bevy::prelude::*;
 use crate::constants;
-use crate::ui::components::{MainMenu, PlayButton, QuitButton};
+use crate::main_menu::components::{MainMenu, PlayButton, QuitButton};
 use crate::ui::create;
 
 pub fn build_main_menu(

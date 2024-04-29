@@ -1,8 +1,13 @@
 use bevy::prelude::*;
+use crate::ui::components::LoadingCurtain;
 
 use crate::infrastructure::AppState;
-use crate::ui::components::{LoadingCurtain, MainMenu};
 use crate::ui::systems::*;
+
+pub use crate::main_menu::components::*;
+
+mod components;
+pub(crate) mod systems;
 
 pub struct MainMenuPlugin;
 
