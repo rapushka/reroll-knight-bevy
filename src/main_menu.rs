@@ -2,7 +2,7 @@ use bevy::prelude::*;
 
 use crate::infrastructure::AppState;
 use crate::ui::components::{LoadingCurtain, MainMenu};
-use crate::ui::systems::show_hide::*;
+use crate::ui::systems::*;
 
 pub struct MainMenuPlugin;
 
