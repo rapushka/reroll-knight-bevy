@@ -8,7 +8,7 @@ pub struct MainMenuPlugin;
 
 impl Plugin for MainMenuPlugin {
     fn build(&self, app: &mut App) {
-        app
+        app // some changes
             .add_systems(OnEnter(AppState::MainMenu), (
                 show::<MainMenu>,
                 hide::<LoadingCurtain>,

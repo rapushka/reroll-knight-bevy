@@ -1,7 +1,6 @@
 use bevy::prelude::*;
 use bevy_inspector_egui::quick::{ResourceInspectorPlugin, WorldInspectorPlugin};
 use crate::game::*;
-use crate::infrastructure::PreparingState;
 
 mod game;
 mod constants;
@@ -17,8 +16,6 @@ enum AppState {
 
 fn main() {
     App::new()
-        .init_resource::<PreparingState<AppState>>()
-
         .init_state::<AppState>()
 
         .add_plugins(DefaultPlugins)
