@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use crate::*;
+use crate::ui::systems::*;
 
 use self::systems::*;
 
@@ -11,7 +12,8 @@ impl Plugin for BootstrapPlugin {
     fn build(&self, app: &mut App) {
         app
             .add_systems(OnEnter(AppState::Bootstrap), (
-                spawn_loading_curtain,
+                build_loading_curtain,
+                build_main_menu,
                 spawn_camera,
                 spawn_light,
             ))
