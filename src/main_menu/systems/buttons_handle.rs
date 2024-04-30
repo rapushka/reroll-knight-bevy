@@ -3,10 +3,10 @@ use bevy::prelude::*;
 
 use crate::common::Clicked;
 use crate::infrastructure::AppState;
-use crate::main_menu::QuitButton;
+use crate::main_menu::*;
 
 pub fn on_play_button_clicked(
-    buttons: Query<Entity, With<QuitButton>>,
+    buttons: Query<Entity, With<PlayButton>>,
     mut event_reader: EventReader<Clicked>,
     mut next_state: ResMut<NextState<AppState>>,
 ) {
