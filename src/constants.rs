@@ -31,6 +31,14 @@ pub mod styles {
         style
     };
 
+    pub const GAMEPLAY_HUD: Style = {
+        let mut style = Style::DEFAULT;
+        style.width = Val::Percent(100.0);
+        style.height = Val::Percent(100.0);
+        style.padding = UiRect::all(Val::Px(10.0));
+        style
+    };
+
     pub const BUTTON: Style = {
         let mut style = Style::DEFAULT;
         style.justify_content = JustifyContent::Center;

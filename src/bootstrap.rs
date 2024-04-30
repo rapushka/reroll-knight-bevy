@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 use crate::*;
-use crate::ui::systems::*;
 use crate::main_menu::systems::*;
 
+use self::gameplay::hud::systems::*;
 use self::systems::*;
 
 mod systems;
@@ -15,6 +15,7 @@ impl Plugin for BootstrapPlugin {
             .add_systems(OnEnter(AppState::Bootstrap), (
                 build_loading_curtain,
                 build_main_menu,
+                build_gameplay_hud,
                 spawn_camera,
                 spawn_light,
             ))

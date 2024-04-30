@@ -7,7 +7,7 @@ use systems::*;
 
 pub struct StartNewRunPlugin;
 
-mod systems;
+pub mod systems;
 
 impl Plugin for StartNewRunPlugin {
     fn build(&self, app: &mut App) {
@@ -17,7 +17,6 @@ impl Plugin for StartNewRunPlugin {
             ).chain())
 
             .add_systems(PostUpdate, start_game.run_if(in_state(AppState::StartNewRun)))
-
         ;
     }
 }

@@ -24,10 +24,11 @@ pub fn button<C>(
     asset_server: &Res<AssetServer>,
     parent: &mut ChildBuilder,
     string: &str,
+    component: C,
 )
-    where C: Component + Default {
+    where C: Component {
     parent.spawn((
-        C::default(),
+        component,
         ButtonBundle {
             style: constants::styles::BUTTON,
             background_color: constants::color::DEFAULT_BUTTON.into(),
