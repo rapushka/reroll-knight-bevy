@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use crate::constants;
+use crate::{constants, ui};
 use crate::main_menu::components::{MainMenu, PlayButton, QuitButton};
 use crate::ui::create;
 
@@ -9,7 +9,11 @@ pub fn build_main_menu(
 ) {
     commands.spawn((
         MainMenu {},
-        NodeBundle { style: constants::styles::MAIN_MENU, ..default() },
+        NodeBundle {
+            style: constants::styles::MAIN_MENU,
+            z_index: ui::order::MAIN_MENU,
+            ..default()
+        },
     ))
         .with_children(|parent| {
             create::title(&asset_server, parent);

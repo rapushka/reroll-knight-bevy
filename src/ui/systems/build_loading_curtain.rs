@@ -1,8 +1,9 @@
-use bevy::prelude::{Color, Commands, default, NodeBundle, Res};
 use bevy::asset::AssetServer;
 use bevy::core::Name;
 use bevy::hierarchy::BuildChildren;
-use crate::constants;
+use bevy::prelude::{Color, Commands, default, NodeBundle, Res};
+
+use crate::{constants, ui};
 use crate::ui::components::LoadingCurtain;
 use crate::ui::create;
 
@@ -16,6 +17,7 @@ pub fn build_loading_curtain(
         NodeBundle {
             style: constants::styles::LOADING_CURTAIN,
             background_color: Color::BLACK.into(),
+            z_index: ui::order::LOADING_CURTAIN,
             ..default()
         },
     ))

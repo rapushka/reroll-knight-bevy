@@ -7,7 +7,7 @@ use crate::ui::systems::*;
 pub use crate::main_menu::components::*;
 
 mod components;
-pub(crate) mod systems;
+pub mod systems;
 
 pub struct MainMenuPlugin;
 
