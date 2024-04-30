@@ -5,6 +5,7 @@ use crate::infrastructure::AppState;
 use crate::ui::systems::*;
 
 pub use crate::main_menu::components::*;
+use crate::main_menu::systems::*;
 
 mod components;
 pub mod systems;
@@ -18,6 +19,11 @@ impl Plugin for MainMenuPlugin {
                 show::<MainMenu>,
                 hide::<LoadingCurtain>,
             ).chain())
+
+            .add_systems(Update, (
+                on_quit_button_clicked
+            )
+                .run_if(in_state(AppState::MainMenu)))
 
             .add_systems(OnExit(AppState::MainMenu), hide::<MainMenu>)
         ;
