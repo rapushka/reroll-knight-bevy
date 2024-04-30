@@ -7,9 +7,9 @@ use crate::infrastructure::AppState;
 use crate::main_menu::*;
 use crate::ui::systems::*;
 
-pub struct GamePlugin;
+pub struct AppPlugin;
 
-impl Plugin for GamePlugin {
+impl Plugin for AppPlugin {
     fn build(&self, app: &mut App) {
         app
             .init_state::<AppState>()
