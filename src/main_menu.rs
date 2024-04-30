@@ -23,8 +23,7 @@ impl Plugin for MainMenuPlugin {
             .add_systems(Update, (
                 on_quit_button_clicked,
                 on_play_button_clicked,
-            )
-                .run_if(in_state(AppState::MainMenu)))
+            ).run_if(in_state(AppState::MainMenu)))
 
             .add_systems(OnExit(AppState::MainMenu), hide::<MainMenu>)
         ;
