@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 use crate::*;
 use crate::main_menu::systems::*;
+use crate::ui::systems::build_loading_curtain;
 
 use self::gameplay::hud::systems::*;
 use self::systems::*;

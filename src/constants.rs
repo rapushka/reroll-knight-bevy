@@ -48,19 +48,6 @@ pub mod styles {
         style
     };
 
-    pub const IMAGE: Style = {
-        let mut style = Style::DEFAULT;
-        style.width = Val::Px(64.0);
-        style.height = Val::Px(64.0);
-        style.margin = UiRect::new(
-            Val::Px(8.0),
-            Val::Px(8.0),
-            Val::Px(8.0),
-            Val::Px(8.0),
-        );
-        style
-    };
-
     pub const TITLE: Style = {
         let mut style = Style::DEFAULT;
         style.flex_direction = FlexDirection::Row;

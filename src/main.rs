@@ -2,9 +2,7 @@ use bevy::prelude::*;
 
 use infrastructure::*;
 
-use crate::bootstrap::BootstrapPlugin;
 use crate::app_plugin::AppPlugin;
-use crate::ui::systems::*;
 
 mod constants;
 mod ui;

@@ -11,15 +11,6 @@ pub fn title(asset_server: &Res<AssetServer>, parent: &mut ChildBuilder) {
         });
 }
 
-pub fn image(asset_server: &Res<AssetServer>, parent: &mut ChildBuilder, image_path: String) {
-    parent.spawn(
-        ImageBundle {
-            style: constants::styles::IMAGE,
-            image: asset_server.load(image_path).into(),
-            ..default()
-        });
-}
-
 pub fn button<C>(
     asset_server: &Res<AssetServer>,
     parent: &mut ChildBuilder,
