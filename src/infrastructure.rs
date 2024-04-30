@@ -8,4 +8,6 @@ pub enum AppState {
     #[default]
     Bootstrap,
     MainMenu,
+    StartNewRun,
+    Gameplay,
 }

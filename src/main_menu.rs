@@ -21,7 +21,8 @@ impl Plugin for MainMenuPlugin {
             ).chain())
 
             .add_systems(Update, (
-                on_quit_button_clicked
+                on_quit_button_clicked,
+                on_play_button_clicked,
             )
                 .run_if(in_state(AppState::MainMenu)))
 

@@ -12,6 +12,7 @@ mod infrastructure;
 mod dependencies;
 mod bootstrap;
 mod main_menu;
+mod gameplay;
 mod app_plugin;
 mod common;
 

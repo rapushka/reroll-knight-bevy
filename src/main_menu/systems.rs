@@ -1,5 +1,5 @@
 pub use build_main_menu::*;
-pub use interact_with_quit_button::*;
+pub use buttons_handle::*;
 
 mod build_main_menu;
-mod interact_with_quit_button;
+mod buttons_handle;
