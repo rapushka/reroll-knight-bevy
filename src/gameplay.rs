@@ -2,12 +2,14 @@ use bevy::prelude::*;
 
 use crate::gameplay::hud::components::*;
 use crate::gameplay::hud::systems::on_back_button_clicked;
+use crate::gameplay::end_run::systems::*;
 use crate::infrastructure::AppState;
 use crate::ui::components::LoadingCurtain;
 use crate::ui::systems::*;
 
 pub mod hud;
 pub mod start_new_run;
+pub mod end_run;
 mod components;
 
 pub struct GameplayPlugin;
@@ -24,7 +26,11 @@ impl Plugin for GameplayPlugin {
                 on_back_button_clicked,
             ).run_if(in_state(AppState::Gameplay)))
 
-            .add_systems(OnExit(AppState::Gameplay), hide::<GameplayHUD>)
+            .add_systems(OnExit(AppState::Gameplay), (
+                show::<LoadingCurtain>,
+                despawn_entities_in_world,
+                hide::<GameplayHUD>,
+            ).chain())
         ;
     }
 }
