@@ -14,6 +14,7 @@ impl Plugin for StartNewRunPlugin {
         app
             .add_systems(OnEnter(AppState::StartNewRun), (
                 show::<LoadingCurtain>,
+                spawn_table,
             ).chain())
 
             .add_systems(PostUpdate, start_game.run_if(in_state(AppState::StartNewRun)))

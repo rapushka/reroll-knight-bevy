@@ -8,6 +8,7 @@ use crate::ui::systems::*;
 
 pub mod hud;
 pub mod start_new_run;
+mod components;
 
 pub struct GameplayPlugin;
 
