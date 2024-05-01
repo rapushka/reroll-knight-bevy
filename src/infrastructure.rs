@@ -11,3 +11,6 @@ pub enum AppState {
     StartNewRun,
     Gameplay,
 }
+
+#[derive(Component)]
+pub struct OnAppState(pub AppState);

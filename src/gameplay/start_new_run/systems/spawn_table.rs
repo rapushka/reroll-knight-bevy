@@ -1,15 +1,22 @@
 use bevy::prelude::*;
-use crate::gameplay::components::*;
+use crate::common::components::Coordinates;
+use crate::gameplay::progression::per_run::*;
+use crate::infrastructure::*;
 
 pub fn spawn_table(
     mut commands: Commands,
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
+    mut event_reader: EventReader<StartRun>,
+    run_progression: Res<RunProgression>,
 ) {
-    commands.spawn((
-        InWorld {},
-        spawn_mesh(&mut meshes, &mut materials)
-    ));
+    for event in event_reader.read() {
+        commands.spawn((
+            OnAppState(AppState::Gameplay),
+            Coordinates { coordinates: run_progression.table_coordinates },
+            spawn_mesh(&mut meshes, &mut materials),
+        ));
+    }
 }
 
 fn spawn_mesh(
