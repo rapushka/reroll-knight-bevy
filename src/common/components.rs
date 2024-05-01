@@ -1,7 +1,7 @@
 use bevy::prelude::Component;
-use crate::common::coordinates::Coordinates as CoordinatesValue;
+use crate::common::coordinates::*;
 
 #[derive(Component)]
-pub struct Coordinates {
-    pub coordinates: CoordinatesValue,
+pub struct OnTableCoordinates {
+    pub coordinates: Coordinates,
 }

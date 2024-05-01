@@ -1,19 +1,19 @@
 use bevy::prelude::*;
-use crate::common::components::Coordinates;
-use crate::gameplay::progression::per_run::*;
+
+use crate::gameplay::world::table::components::InRoomCoordinates;
+use crate::gameplay::world::table::SitAtTable;
 use crate::infrastructure::*;
 
 pub fn spawn_table(
     mut commands: Commands,
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
-    mut event_reader: EventReader<StartRun>,
-    run_progression: Res<RunProgression>,
+    mut event_reader: EventReader<SitAtTable>,
 ) {
-    for event in event_reader.read() {
+    for sit_at_table in event_reader.read() {
         commands.spawn((
             OnAppState(AppState::Gameplay),
-            Coordinates { coordinates: run_progression.table_coordinates },
+            InRoomCoordinates { coordinates: sit_at_table.coordinates },
             spawn_mesh(&mut meshes, &mut materials),
         ));
     }
