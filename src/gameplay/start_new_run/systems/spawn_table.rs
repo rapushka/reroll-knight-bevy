@@ -11,9 +11,12 @@ pub fn spawn_table(
     mut event_reader: EventReader<SitAtTable>,
 ) {
     for sit_at_table in event_reader.read() {
+        let coordinates = sit_at_table.coordinates;
+
         commands.spawn((
+            Name::new(format!("table: {}", coordinates)),
             OnAppState(AppState::Gameplay),
-            InRoomCoordinates { coordinates: sit_at_table.coordinates },
+            InRoomCoordinates { coordinates: coordinates },
             spawn_mesh(&mut meshes, &mut materials),
         ));
     }
