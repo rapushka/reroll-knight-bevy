@@ -8,20 +8,18 @@ pub mod components;
 
 pub struct TablePlugin;
 
-const TARGET_STATE: AppState = AppState::Gameplay;
-
 impl Plugin for TablePlugin {
     fn build(&self, app: &mut App) {
         app
             .add_event::<SitAtTable>()
 
-            .add_systems(OnEnter(TARGET_STATE), (
+            .add_systems(OnEnter(AppState::Gameplay), (
                 sit_at_table_from_progress,
             ))
 
             .add_systems(Update, (
                 spawn_table,
-            ).run_if(in_state(TARGET_STATE)))
+            ).run_if(in_state(AppState::Gameplay)))
         ;
     }
 }
