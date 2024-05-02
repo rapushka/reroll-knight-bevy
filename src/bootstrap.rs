@@ -1,7 +1,6 @@
 use bevy::prelude::*;
 use crate::*;
 use crate::gameplay::hud::components::GameplayHUD;
-use crate::gameplay::world::config::ConfigProvider;
 use crate::main_menu::MainMenu;
 use crate::main_menu::systems::*;
 use crate::ui::systems::{build_loading_curtain, hide};
@@ -17,7 +16,6 @@ impl Plugin for BootstrapPlugin {
     fn build(&self, app: &mut App) {
         app
             .add_systems(OnEnter(AppState::Bootstrap), (
-                load_configs,
                 build_loading_curtain,
                 build_main_menu,
                 hide::<MainMenu>,

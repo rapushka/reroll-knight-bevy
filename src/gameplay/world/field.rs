@@ -10,9 +10,7 @@ pub struct FieldPlugin;
 impl Plugin for FieldPlugin {
     fn build(&self, app: &mut App) {
         app
-            .add_systems(OnEnter(AppState::Gameplay), (
-                test_resource_loaded
-            ))
+            .add_systems(OnEnter(AppState::Gameplay), test_resource_loaded)
 
             .add_systems(Update, (
                 spawn_field_on_new_table,

@@ -6,8 +6,6 @@ edition = "2021"
 [dependencies]
 bevy = "0.13.2"
 bevy-inspector-egui = "0.24.0"
-bevy_common_assets = { version = "0.10.0", features = ["ron"] }
-serde = { version = "1.0.199", features = ["derive"] }
 
 [profile.dev]
 opt-level = 0
