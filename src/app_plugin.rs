@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use bevy_common_assets::ron::RonAssetPlugin;
 
 use crate::bootstrap::*;
 use crate::common::*;

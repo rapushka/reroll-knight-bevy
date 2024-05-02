@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use hud::HudPlugin;
 
-use crate::gameplay::world::table::*;
+use crate::gameplay::world::*;
 
 pub mod hud;
 pub mod progression;
@@ -18,6 +18,7 @@ impl Plugin for GameplayPlugin {
             .add_plugins((
                 HudPlugin,
                 TablePlugin,
+                FieldPlugin,
             ))
         ;
     }

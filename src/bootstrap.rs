@@ -18,11 +18,12 @@ impl Plugin for BootstrapPlugin {
             .add_systems(OnEnter(AppState::Bootstrap), (
                 build_loading_curtain,
                 build_main_menu,
+                hide::<MainMenu>,
                 build_gameplay_hud,
+                hide::<GameplayHUD>,
                 spawn_camera,
                 spawn_light,
-                hide::<GameplayHUD>,
-                hide::<MainMenu>,
+                load_configs,
             ).chain())
 
             .add_systems(PostUpdate, open_main_menu.run_if(in_state(AppState::Bootstrap)))

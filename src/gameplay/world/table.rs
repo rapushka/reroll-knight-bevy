@@ -19,7 +19,7 @@ impl Plugin for TablePlugin {
 
             .add_systems(Update, (
                 spawn_table,
-            ).run_if(in_state(AppState::Gameplay)))
+            ).run_if(on_event::<SitAtTable>()))
         ;
     }
 }

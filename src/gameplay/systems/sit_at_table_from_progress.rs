@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 
 use crate::gameplay::progression::per_run::RunProgression;
-use crate::gameplay::world::table::*;
+use crate::gameplay::world::*;
 
 pub fn sit_at_table_from_progress(
     mut event_writer: EventWriter<SitAtTable>,
