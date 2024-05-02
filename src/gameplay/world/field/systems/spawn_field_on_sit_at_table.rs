@@ -1,23 +1,28 @@
 use bevy::prelude::*;
+
 use crate::gameplay::world::components::Table;
-use crate::gameplay::world::config::{GenerationConfig, GenerationConfigHandle};
-use crate::gameplay::world::SitAtTable;
+use crate::gameplay::world::config::*;
 
 pub fn spawn_field_on_new_table(
     new_table: Query<Entity, Added<Table>>,
     mut commands: Commands,
-    generation_config: Res<GenerationConfigHandle>,
-    mut configs: ResMut<Assets<GenerationConfig>>,
 ) {
-    if let Some(gen_config) = configs.remove(generation_config.0.id()) {
-        println!("field sizes: {}, {}", gen_config.column_count, gen_config.row_count);
-    }
-
     for table in new_table.iter() {
         commands.entity(table).with_children(|parent| {
             parent.spawn((
                 Name::new("Cell"),
             ));
         });
+    }
+}
+
+pub fn test_resource_loaded(
+    configs: Res<Assets<GenerationConfig>>,
+    config_provider: Res<ConfigProvider>,
+) {
+    let handle = &config_provider.generation;
+
+    if let Some(config) = configs.get(handle) {
+        println!("field sizes: {}, {}", config.column_count, config.row_count);
     }
 }
