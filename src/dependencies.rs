@@ -1,6 +1,6 @@
-use bevy::app::{App, Plugin};
-use bevy::DefaultPlugins;
-use bevy_inspector_egui::quick::WorldInspectorPlugin;
+use bevy::prelude::*;
+use bevy_editor_pls::EditorPlugin;
+use bevy_inspector_egui::quick::*;
 
 pub struct DependenciesPlugin;
 
@@ -9,7 +9,8 @@ impl Plugin for DependenciesPlugin {
         app
             .add_plugins((
                 DefaultPlugins,
-                WorldInspectorPlugin::new(),
+                // WorldInspectorPlugin::new(),
+                EditorPlugin::default(),
             ))
         ;
     }

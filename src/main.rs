@@ -15,4 +15,3 @@ mod app_plugin;
 mod common;
 
 fn main() { App::new().add_plugins(AppPlugin).run(); }
-

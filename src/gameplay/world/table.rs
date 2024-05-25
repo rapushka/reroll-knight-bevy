@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 use crate::common::coordinates::Coordinates;
-use crate::gameplay::start_new_run::systems::spawn_table;
+use crate::gameplay::start_new_run::systems::*;
 use crate::gameplay::systems::sit_at_table_from_progress;
 use crate::infrastructure::AppState;
 

@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use crate::gameplay::world::components::Table;
 
 use crate::gameplay::world::table::components::InRoomCoordinates;
 use crate::gameplay::world::table::SitAtTable;
@@ -15,6 +16,7 @@ pub fn spawn_table(
 
         commands.spawn((
             Name::new(format!("table: {}", coordinates)),
+            Table,
             OnAppState(AppState::Gameplay),
             InRoomCoordinates { coordinates: coordinates },
             spawn_mesh(&mut meshes, &mut materials),
