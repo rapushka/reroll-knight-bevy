@@ -13,7 +13,8 @@ impl Plugin for FieldPlugin {
             .add_systems(Update, (
                 spawn_field_on_new_table,
             )
-                .run_if(in_state(AppState::Gameplay)))
+                .run_if(in_state(AppState::Gameplay)),
+            )
         ;
     }
 }
