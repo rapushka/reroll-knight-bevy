@@ -5,7 +5,10 @@ use bevy::core::Name;
 use crate::constants;
 
 pub fn title(asset_server: &Res<AssetServer>, parent: &mut ChildBuilder) {
-    parent.spawn(NodeBundle { style: constants::styles::TITLE, ..default() })
+    parent.spawn((
+        Name::new("title"),
+        NodeBundle { style: constants::styles::TITLE, ..default() },
+    ))
         .with_children(|parent| {
             text(asset_server, "the Bad Luck", parent, 64.0);
         });
@@ -19,6 +22,7 @@ pub fn button<C>(
 )
     where C: Component {
     parent.spawn((
+        Name::new(format!("button [{}]", string)),
         component,
         ButtonBundle {
             style: constants::styles::BUTTON,

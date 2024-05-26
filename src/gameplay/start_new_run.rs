@@ -3,7 +3,7 @@ use bevy::prelude::*;
 use crate::infrastructure::*;
 use crate::ui::components::*;
 use crate::ui::systems::*;
-use systems::*;
+use self::systems::*;
 
 pub struct StartNewRunPlugin;
 
@@ -14,9 +14,9 @@ impl Plugin for StartNewRunPlugin {
         app
             .add_systems(OnEnter(AppState::StartNewRun), (
                 show::<LoadingCurtain>,
+                create_new_progression,
+                start_run,
             ).chain())
-
-            .add_systems(PostUpdate, start_game.run_if(in_state(AppState::StartNewRun)))
         ;
     }
 }

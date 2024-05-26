@@ -7,7 +7,20 @@ pub struct Preparing {}
 pub enum AppState {
     #[default]
     Bootstrap,
+    Loading,
     MainMenu,
     StartNewRun,
     Gameplay,
+}
+
+#[derive(Component)]
+pub struct OnAppState(pub AppState);
+
+#[derive(States, Clone, Eq, PartialEq, Debug, Hash, Default)]
+pub enum GameplayState {
+    #[default]
+    Starting,
+    InMap,
+    Playing,
+    Paused,
 }

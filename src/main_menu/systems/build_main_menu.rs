@@ -8,6 +8,7 @@ pub fn build_main_menu(
     mut commands: Commands,
 ) {
     commands.spawn((
+        Name::new("main menu"),
         MainMenu {},
         NodeBundle {
             style: constants::styles::MAIN_MENU,

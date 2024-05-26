@@ -1,3 +1,6 @@
+use bevy::math::Vec3;
+use crate::prelude::coordinates::Coordinates;
+
 pub const FONT_SIZE: f32 = 32.0;
 
 pub mod color {
@@ -58,3 +61,8 @@ pub mod styles {
         style
     };
 }
+
+pub const CELLS_ORIGIN: Vec3 = Vec3::new(0.0, 0.07, 0.0);
+pub const CELLS_SCALE: f32 = 0.17;
+
+pub const FIELD_SIZES: Coordinates = Coordinates::new(3, 6); 
