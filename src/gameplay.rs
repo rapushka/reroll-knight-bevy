@@ -21,8 +21,7 @@ impl Plugin for GameplayPlugin {
 
             .add_plugins((
                 HudPlugin,
-                TablePlugin,
-                FieldPlugin,
+                WorldPlugin,
             ))
         ;
     }
