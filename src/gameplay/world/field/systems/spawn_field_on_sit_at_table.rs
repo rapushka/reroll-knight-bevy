@@ -10,7 +10,9 @@ use crate::prelude::*;
 pub fn spawn_cells(
     mut event: EventWriter<SpawnCell>,
 ) {
-    event.send(SpawnCell(Coordinates::ZERO));
+    for (column, row) in FIELD_SIZES {
+        event.send(SpawnCell(Coordinates::new(column, row)));
+    }
 }
 
 pub fn spawn_cell(
