@@ -23,6 +23,14 @@ impl Plugin for GameplayPlugin {
                 HudPlugin,
                 WorldPlugin,
             ))
+
+            .add_systems(OnExit(AppState::Gameplay), reset_gameplay_state)
         ;
     }
+}
+
+fn reset_gameplay_state(
+    mut next_gameplay_state: ResMut<NextState<GameplayState>>,
+) {
+    next_gameplay_state.set(GameplayState::Starting);
 }
