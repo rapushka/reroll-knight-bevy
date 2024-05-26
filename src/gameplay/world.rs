@@ -9,7 +9,6 @@ use crate::prelude::AppState;
 pub mod table;
 pub mod field;
 pub mod config;
-pub mod view;
 
 pub struct WorldPlugin;
 
