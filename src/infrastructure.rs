@@ -7,6 +7,7 @@ pub struct Preparing {}
 pub enum AppState {
     #[default]
     Bootstrap,
+    Loading,
     MainMenu,
     StartNewRun,
     Gameplay,

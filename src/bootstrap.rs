@@ -25,7 +25,7 @@ impl Plugin for BootstrapPlugin {
                 spawn_camera,
             ).chain())
 
-            .add_systems(PostUpdate, open_main_menu.run_if(in_state(AppState::Bootstrap)))
+            .add_systems(PostUpdate, start_loading.run_if(in_state(AppState::Bootstrap)))
         ;
     }
 }

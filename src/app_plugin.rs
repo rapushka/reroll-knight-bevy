@@ -1,14 +1,10 @@
 use bevy::prelude::*;
 
-use crate::bootstrap::*;
-use crate::common::*;
 use crate::common::systems::*;
 use crate::dependencies::DependenciesPlugin;
-use crate::gameplay::GameplayPlugin;
 use crate::gameplay::progression::per_run::{RunProgression, StartRun};
 use crate::gameplay::start_new_run::StartNewRunPlugin;
-use crate::infrastructure::AppState;
-use crate::main_menu::*;
+use crate::prelude::*;
 use crate::ui::systems::*;
 
 pub struct AppPlugin;
@@ -26,6 +22,7 @@ impl Plugin for AppPlugin {
             .add_plugins(DependenciesPlugin)
 
             .add_plugins((
+                AssetsPlugin,
                 BootstrapPlugin,
                 MainMenuPlugin,
                 StartNewRunPlugin,
