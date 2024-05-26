@@ -1,6 +1,9 @@
+use bevy::math::Vec3;
+use crate::prelude::coordinates::Coordinates;
+
 pub const FONT_SIZE: f32 = 32.0;
 
-pub mod color {
+pub mod color { // TODO: sub-module for ui things?
     use bevy::prelude::*;
 
     pub const DEFAULT_BUTTON: Color = Color::hsl(0.0, 0.0, 0.15);
@@ -58,3 +61,7 @@ pub mod styles {
         style
     };
 }
+
+pub const CELLS_ORIGIN: Vec3 = Vec3::new(0.0, 0.07, 0.0); // TODO: move me to config
+
+pub const FIELD_SIZES: Coordinates = Coordinates::new(3, 6); 
