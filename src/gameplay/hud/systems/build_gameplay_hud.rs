@@ -8,6 +8,7 @@ pub fn build_gameplay_hud(
     mut commands: Commands,
 ) {
     commands.spawn((
+        Name::new("gameplay hud"),
         GameplayHUD {},
         NodeBundle {
             style: constants::styles::GAMEPLAY_HUD,
