@@ -4,6 +4,7 @@ pub use table::*;
 pub use field::*;
 use crate::gameplay::systems::*;
 use crate::infrastructure::GameplayState;
+use crate::prelude::AppState;
 
 pub mod table;
 pub mod field;
@@ -27,6 +28,12 @@ impl Plugin for WorldPlugin {
             .add_systems(Update, (
                 spawn_cell,
             ).run_if(on_event::<SpawnCell>()))
+
+            .add_systems(Update, (
+                snap_to_grid,
+            )
+                .run_if(in_state(AppState::Gameplay)),
+            )
         ;
     }
 }

@@ -1,5 +1,7 @@
-use bevy::prelude::{Component, Event};
-use crate::common::coordinates::Coordinates;
+use bevy::prelude::Component;
 
 #[derive(Component)]
 pub struct Cell;
+
+#[derive(Component)]
+pub struct SnapToGrid;

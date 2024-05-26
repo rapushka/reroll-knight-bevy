@@ -28,16 +28,18 @@ pub fn spawn_cell(
 
         commands.spawn(Cell)
             .insert(Name::new("Cell"))
+            .insert(SnapToGrid)
             .insert(SceneBundle {
                 scene: assets.cell.clone(),
                 ..default()
             })
-            .insert(OnTableCoordinates(coordinates))
+            .insert(OnTableCoordinates::new(coordinates, layer::Layer::Bottom))
             .insert(Transform {
                 translation: CELLS_ORIGIN,
                 scale: Vec3::ONE * 0.1,
                 ..default()
             })
-            .set_parent(table);
+            .set_parent(table)
+        ;
     }
 }

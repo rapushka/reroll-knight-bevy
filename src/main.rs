@@ -13,7 +13,13 @@ pub mod prelude {
         main_menu::*,
         gameplay::*,
         app_plugin::*,
-        common::*,
+        common::{
+            *,
+            utils::{
+                *,
+                extensions::*,
+            },
+        },
         assets::*,
     };
 }

@@ -1,4 +1,5 @@
 use std::fmt::{Display, Formatter};
+use bevy::prelude::*;
 
 #[derive(Copy, Clone)]
 pub struct Coordinates {
@@ -14,6 +15,12 @@ impl Coordinates {
 
 impl Default for Coordinates {
     fn default() -> Self { Self::ZERO }
+}
+
+impl From<Coordinates> for Vec2 {
+    fn from(coordinates: Coordinates) -> Self {
+        Vec2::new(coordinates.column as f32, coordinates.row as f32)
+    }
 }
 
 impl Display for Coordinates {
