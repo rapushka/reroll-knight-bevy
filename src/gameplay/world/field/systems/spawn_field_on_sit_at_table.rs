@@ -10,13 +10,17 @@ pub fn spawn_field_on_new_table(
     assets: Res<EnvironmentAssets>,
 ) {
     for table in new_table.iter() {
-        commands.spawn((
-            Name::new("Cell"),
-            Cell,
-            SceneBundle {
+        commands.spawn(Name::new("Cell"))
+            .insert(Cell)
+            .insert(SceneBundle {
                 scene: assets.cell.clone(),
                 ..default()
-            },
-        )).set_parent(table);
+            })
+            .insert(Transform {
+                translation: Vec3::new(0.0, 0.01, 0.0),
+                scale: Vec3::ONE * 0.1,
+                ..default()
+            })
+            .set_parent(table);
     }
 }
