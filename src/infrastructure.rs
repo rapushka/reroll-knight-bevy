@@ -15,3 +15,12 @@ pub enum AppState {
 
 #[derive(Component)]
 pub struct OnAppState(pub AppState);
+
+#[derive(States, Clone, Eq, PartialEq, Debug, Hash, Default)]
+pub enum GameplayState {
+    #[default]
+    Starting,
+    InMap,
+    Playing,
+    Paused,
+}

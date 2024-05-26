@@ -4,6 +4,9 @@ use bevy_asset_loader::prelude::*;
 
 #[derive(AssetCollection, Resource)]
 pub struct EnvironmentAssets {
+    #[asset(path = "models/table.gltf#Scene0")]
+    pub table: Handle<Scene>,
+
     #[asset(path = "models/cell.gltf#Scene0")]
     pub cell: Handle<Scene>,
 }

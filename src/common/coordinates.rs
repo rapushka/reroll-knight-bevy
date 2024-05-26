@@ -8,6 +8,8 @@ pub struct Coordinates {
 
 impl Coordinates {
     pub const ZERO: Self = Self { column: 0, row: 0 };
+
+    pub fn new(column: i32, row: i32) -> Self { Self { column, row } }
 }
 
 impl Default for Coordinates {

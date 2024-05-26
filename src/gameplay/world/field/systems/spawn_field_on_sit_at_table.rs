@@ -1,7 +1,9 @@
 use bevy::prelude::*;
+use crate::common::components::OnTableCoordinates;
+use crate::common::coordinates::Coordinates;
 
 use crate::gameplay::world::components::Table;
-use crate::gameplay::world::field::components::Cell;
+use crate::gameplay::world::field::components::*;
 use crate::prelude::*;
 
 pub fn spawn_field_on_new_table(
@@ -10,14 +12,16 @@ pub fn spawn_field_on_new_table(
     assets: Res<EnvironmentAssets>,
 ) {
     for table in new_table.iter() {
-        commands.spawn(Name::new("Cell"))
-            .insert(Cell)
+        let coordinates = Coordinates::new(0, 0);
+
+        commands.spawn(Cell)
+            .insert(Name::new("Cell"))
             .insert(SceneBundle {
                 scene: assets.cell.clone(),
                 ..default()
             })
+            .insert(OnTableCoordinates(coordinates))
             .insert(Transform {
-                translation: Vec3::new(0.0, 0.01, 0.0),
                 scale: Vec3::ONE * 0.1,
                 ..default()
             })

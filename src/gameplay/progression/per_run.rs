@@ -6,13 +6,13 @@ pub struct StartRun; // TODO: is this event needed?
 
 #[derive(Resource)]
 pub struct RunProgression {
-    pub table_coordinates: Coordinates,
+    pub current_table: Coordinates,
 }
 
 impl Default for RunProgression {
     fn default() -> Self {
         Self {
-            table_coordinates: Coordinates::ZERO,
+            current_table: Coordinates::ZERO,
         }
     }
 }

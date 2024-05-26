@@ -2,7 +2,7 @@ use bevy::prelude::*;
 
 use crate::common::systems::*;
 use crate::dependencies::DependenciesPlugin;
-use crate::gameplay::progression::per_run::{RunProgression, StartRun};
+use crate::gameplay::progression::per_run::{RunProgression};
 use crate::gameplay::start_new_run::StartNewRunPlugin;
 use crate::prelude::*;
 use crate::ui::systems::*;
@@ -14,10 +14,7 @@ impl Plugin for AppPlugin {
         app
             .init_state::<AppState>()
 
-            .init_resource::<RunProgression>()
-
             .add_event::<Clicked>()
-            .add_event::<StartRun>()
 
             .add_plugins(DependenciesPlugin)
 
