@@ -34,8 +34,8 @@ impl IntoIterator for Coordinates {
     type IntoIter = Box<dyn Iterator<Item = (i32, i32)>>;
 
     fn into_iter(self) -> Self::IntoIter {
-        let column_range = 0..=self.column;
-        let row_range = 0..=self.row;
+        let column_range = 0..self.column;
+        let row_range = 0..self.row;
         let iter = column_range.flat_map(move |column| {
             row_range.clone().map(move |row| (column, row))
         });
